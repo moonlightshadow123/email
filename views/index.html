@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/static/css/bootstrap4.1.0.min.css" rel="stylesheet">
+    <link href="/static/css/email.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link  rel="icon" href="/static/img/logo.png">
+    <script src="/static/js/bootstrap4.1.0.min.js"></script>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+
+    <style type="text/css">
+        html,body {
+          height: 100%;
+          margin: 0
+        }
+
+        .box {
+          display: flex;
+          flex-flow: column;
+          height: 100%;
+        }
+
+        .box .therow {
+        }
+
+        .box .therow.header {
+          flex: 0 1 auto;
+          /* The above is shorthand for:
+          flex-grow: 0,
+          flex-shrink: 1,
+          flex-basis: auto
+          */
+        }
+
+        .box .therow.content {
+          flex: 1 1 auto;
+          overflow-y: scroll;
+        }
+
+        .box .therow.footer {
+          flex: 0 1 40px;
+        }
+
+        .thecontainer{
+          display: flex;
+          height: 100%;
+        }
+        .thecol{
+          flex: 1 1 auto;
+          float: left;
+        }
+        .boxDiv {
+          border-bottom: 2px solid #bebebe;
+          border-right: 2px solid #dedede;
+          background-color: #f1f1f1;
+          padding: 5px;
+          margin: 5px 0;
+        }
+        .boxDiv-selected {
+          background-color: #e1e1e1;
+          border-top: 2px solid #bebebe;
+          border-left: 2px solid #dedede;
+          border-bottom: 0px;
+          border-right: 0px;
+        }
+        .msgDiv {
+          background-color: #f3f1f1;
+          padding: 5px;
+          margin: 5px 0;
+        }
+        p{
+            margin-block-end:0px;
+        }
+        ul{
+            padding-inline-start:0px;
+        }
+        a#histLink :hover{
+            color:#aaaaff;
+        }
+        a#histLink{
+            color:gray;
+        }
+        .msgDiv:hover{
+          background-color: #f5f5ff;
+        }
+        a.activeBtn:hover{
+          color:#f5f5f5;
+        }
+    </style>
+    <script type="text/javascript">
+        var boxs = {{.boxs}};
+        console.log(boxs);
+    </script>
+</head>
+<body>
+    <!--
+    <header class="fixed-top shadow-sm header row" style="background-color: #f5f5f5;">
+        <div class="col-2">
+            <a href="/" class="btn btn-outline-secondary text-dark" role="button">
+                <strong>Back</strong>
+            </a>
+        </div>
+        <div class="col-8 title">
+            <strong class="text-dark">Chat Room</strong>
+        </div>
+        <div class="col-2"></div>
+    </header>-->
+    <div class="box">
+    
+    <div class="header therow row" style="background-color: #f5f5f5;">
+        <div class="col-2" style="text-align: center">
+            <a href="/logout" class="btn btn-outline-secondary" role="button">
+                <strong>Logout</strong>
+            </a>
+        </div>
+        <div class="col-8 title">
+            <strong class="text-dark">Email Client</strong>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+    <!-- header end -->
+    <div class="container-fluid therow content" >
+ 
+        <div class="row thecontainer">
+            <div class="thecol col-2" style=" border-right: 10px solid #f5f5f5;">
+                <ul style="list-style-type:none;" id="boxUl">
+                    <!--<li><div class="cltDiv">good&nbsp;&nbsp;&nbsp;&nbsp;<i data-id="good" style="color: #999999" class="fa fa-circle"></i></div></li>
+                    <li><div class="cltDiv">best&nbsp;&nbsp;&nbsp;&nbsp;<i data-id="best" style="color:#339533" class="fa fa-circle"></i></div></li>-->
+                </ul>
+            </div>
+            <div class="thecol col-10" style="height: 100%;overflow-y: scroll;">
+                <div id="msgContainer"  class="container-fluid">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="therow footer row" style="background-color: #f5f5f5;">
+        <div class="col-2" style="text-align: center">col-2</div>
+        <div id="controlFooter" class="col-10" style="text-align: center"></div>
+    </div>
+
+    <!-- message area end -->
+</div>
+<script src="/static/js/email.js"></script>
+    <!-- inputMessage Area end -->
+</body>
+</html>
